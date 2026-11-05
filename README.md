@@ -1,5 +1,7 @@
 # CampusCare complaint portal
 
+Repository name: `CAMPUS-COMPLAINT-PORTAL`
+
 A responsive campus complaint portal with separate student and management access. The frontend uses HTML, CSS, and browser JavaScript. An Express server provides the API and connects to MySQL; browser code never receives database credentials.
 
 ## Set up
