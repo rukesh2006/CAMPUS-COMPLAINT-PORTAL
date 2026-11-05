@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f7f8fb"><title>CampusCare — Complaint Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar">
+      <a class="brand" href="#" aria-label="CampusCare home"><span class="brand-mark"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M5 13.5 16 6l11 7.5v12a1.5 1.5 0 0 1-1.5 1.5h-19A1.5 1.5 0 0 1 5 25.5v-12Z"/><path d="M12 27V17h8v10M3 14l13-9 13 9"/></svg></span><span>campus<span class="brand-light">care</span><small>STUDENT SERVICES</small></span></a>
+      <div class="side-label">WORKSPACE</div>
+      <nav class="side-nav"><button class="nav-link active" data-view="home"><span class="nav-icon">⌂</span>Overview</button><button class="nav-link" data-view="complaints"><span class="nav-icon">▤</span>My complaints<span class="nav-count" id="navCount">0</span></button></nav>
+      <div class="side-bottom"><div class="help-card"><div class="help-icon">✳</div><b>Here to help</b><p>Your voice helps make campus better for everyone.</p></div><button class="profile" id="profileButton"><span class="avatar" id="profileAvatar">?</span><span class="profile-text"><b id="profileName">Welcome</b><small id="profileRole">Sign in to continue</small></span><span class="profile-menu">···</span></button></div>
+    </aside>
+    <main class="main-area">
+      <header class="topbar"><div class="breadcrumb">Campus services <span>/</span> <b id="crumb">Overview</b></div><div class="top-actions"><span class="secure-label"><i></i> Secure portal</span><button class="top-login" id="topLogin">Sign in <span>↗</span></button><button class="icon-button hidden" id="logoutButton" title="Sign out">↪</button></div></header>
+      <div class="content" id="app"></div>
+      <footer class="footer"><span>© 2025 CampusCare</span><span>Built for a better campus <b>✳</b></span></footer>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+  <dialog id="authDialog" class="modal"><form method="dialog"><button class="modal-close" aria-label="Close">×</button></form><div class="modal-heading"><span class="eyebrow">WELCOME TO CAMPUSCARE</span><h2 id="authTitle">Sign in to continue</h2><p id="authSubtitle">Choose how you’d like to access the portal.</p></div><div class="role-switch"><button class="role-option selected" data-role="student"><span>🎓</span><span><b>Student</b><small>Raise and track complaints</small></span><i>✓</i></button><button class="role-option" data-role="management"><span>🏢</span><span><b>Management</b><small>Review and resolve issues</small></span><i>✓</i></button></div><form id="authForm" class="form-stack"><div id="nameField" class="hidden"><label for="studentName">Full name</label><input id="studentName" autocomplete="name" maxlength="100" placeholder="Your name"></div><label id="identityLabel" for="identity">Registration number</label><input id="identity" autocomplete="username" placeholder="e.g. 24CS001" required><label for="password">Password</label><input id="password" type="password" autocomplete="current-password" placeholder="Enter your password" required><button class="primary-button wide" type="submit">Sign in <span>→</span></button></form><p class="auth-foot" id="authFoot">New here? <button type="button" id="modeToggle">Create a student account</button></p></dialog>
+  <dialog id="complaintDialog" class="modal complaint-modal"><form method="dialog"><button class="modal-close" aria-label="Close">×</button></form><div class="modal-heading"><span class="eyebrow">WE’RE LISTENING</span><h2>Raise a complaint</h2><p>Tell us what’s happening. We’ll get it to the right team.</p></div><form id="complaintForm" class="form-stack"><label for="complaintTitle">Subject</label><input id="complaintTitle" maxlength="160" placeholder="A short summary of the issue" required><div class="field-row"><div><label for="category">Category</label><select id="category" required><option value="">Select a category</option><option>Hostel</option><option>Facilities</option><option>Academics</option><option>IT & Wi-Fi</option><option>Transport</option><option>Safety</option><option>Other</option></select></div><div><label for="priority">Priority</label><select id="priority"><option>Normal</option><option>High</option><option>Urgent</option></select></div></div><label for="complaintDescription">What happened?</label><textarea id="complaintDescription" rows="4" maxlength="5000" placeholder="Include the details that will help us understand and solve this…" required></textarea><button class="primary-button wide" type="submit">Submit complaint <span>→</span></button></form></dialog>
+  <script src="app.js"></script>
+</body></html>
